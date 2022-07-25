@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftqrcodescanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vinodiOS/SwiftQRCodeScanner.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4a13425d5979b0c432e396aba0e9dc13b7b3e0dc"
+      }
+    }
+  ],
+  "version" : 2
+}

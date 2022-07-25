@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isPresented = false
+    @State private var result: String?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(spacing: 30) {
+            Text(result ?? "")
+            Button("Scan QR Code") {
+                self.isPresented = true
+            }
+        }.sheet(isPresented: $isPresented) {
+            QRScanner(result: self.$result)
         }
     }
 }

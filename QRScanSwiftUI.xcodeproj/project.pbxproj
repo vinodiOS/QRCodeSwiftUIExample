@@ -11,6 +11,8 @@
 		1A636684288EF21B002FE85B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A636683288EF21B002FE85B /* ContentView.swift */; };
 		1A636686288EF220002FE85B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A636685288EF220002FE85B /* Assets.xcassets */; };
 		1A636689288EF220002FE85B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A636688288EF220002FE85B /* Preview Assets.xcassets */; };
+		1A636691288EF30A002FE85B /* SwiftQRCodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1A636690288EF30A002FE85B /* SwiftQRCodeScanner */; };
+		1A636693288EF3C3002FE85B /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A636692288EF3C3002FE85B /* QRScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		1A636683288EF21B002FE85B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A636685288EF220002FE85B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A636688288EF220002FE85B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A636692288EF3C3002FE85B /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A636691288EF30A002FE85B /* SwiftQRCodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				1A636681288EF21B002FE85B /* QRScanSwiftUIApp.swift */,
+				1A636692288EF3C3002FE85B /* QRScanner.swift */,
 				1A636683288EF21B002FE85B /* ContentView.swift */,
 				1A636685288EF220002FE85B /* Assets.xcassets */,
 				1A636687288EF220002FE85B /* Preview Content */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = QRScanSwiftUI;
+			packageProductDependencies = (
+				1A636690288EF30A002FE85B /* SwiftQRCodeScanner */,
+			);
 			productName = QRScanSwiftUI;
 			productReference = 1A63667E288EF21B002FE85B /* QRScanSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 1A636675288EF21B002FE85B;
+			packageReferences = (
+				1A63668F288EF30A002FE85B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */,
+			);
 			productRefGroup = 1A63667F288EF21B002FE85B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A636693288EF3C3002FE85B /* QRScanner.swift in Sources */,
 				1A636684288EF21B002FE85B /* ContentView.swift in Sources */,
 				1A636682288EF21B002FE85B /* QRScanSwiftUIApp.swift in Sources */,
 			);
@@ -270,11 +282,14 @@
 				DEVELOPMENT_TEAM = L3PPALH3XL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To Scan QR Code";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To Scan QR Code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +314,14 @@
 				DEVELOPMENT_TEAM = L3PPALH3XL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To Scan QR Code";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "To Scan QR Code";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A63668F288EF30A002FE85B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinodiOS/SwiftQRCodeScanner.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A636690288EF30A002FE85B /* SwiftQRCodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A63668F288EF30A002FE85B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */;
+			productName = SwiftQRCodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A636676288EF21B002FE85B /* Project object */;
 }
