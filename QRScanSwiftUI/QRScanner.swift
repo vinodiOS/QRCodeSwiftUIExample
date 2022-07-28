@@ -3,7 +3,7 @@ import SwiftUI
 import SwiftQRCodeScanner
 
 struct QRScanner: UIViewControllerRepresentable {
-    @Binding var result: String?
+    @Binding var result: Result<String, QRCodeError>?
     @Environment(\.presentationMode) var presentationMode
     
     func makeCoordinator() -> QRScanner.Coordinator {
@@ -31,16 +31,17 @@ extension QRScanner {
         }
         
         func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
-            parent.result = result
+            parent.result = .success(result)
             parent.presentationMode.wrappedValue.dismiss()
         }
         
         func qrScannerDidFail(_ controller: UIViewController, error: SwiftQRCodeScanner.QRCodeError) {
-            
+            parent.result = .failure(error)
+            parent.presentationMode.wrappedValue.dismiss()
         }
         
         func qrScannerDidCancel(_ controller: UIViewController) {
-            
+            print("QR Controller did cancel")
         }
     }
 }

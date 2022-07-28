@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import SwiftQRCodeScanner
 
 struct ContentView: View {
     @State private var isPresented = false
-    @State private var result: String?
+    @State private var result: Result<String, QRCodeError>?
     
     var body: some View {
         VStack(spacing: 30) {
-            Text(result ?? "")
+            if let unwrappedResult = result {
+                switch unwrappedResult {
+                case .success(let qrCodeString):
+                    Text(qrCodeString)
+                case .failure(let qrCodeError):
+                    Text(qrCodeError.errorDescription ?? "")
+                        .foregroundColor(.red)
+                }
+            }
             Button("Scan QR Code") {
                 self.isPresented = true
             }
